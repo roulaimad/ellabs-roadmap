@@ -1,0 +1,20 @@
+.display-container {
+    font-family: Roboto;
+    position: absolute;
+    top: 1%;
+    background-color: rgb(200, 255, 252);
+    width: 25%;
+    transition: all 0.3s ease-in-out;
+}
+
+.display-left {
+    left: 1%;
+}
+
+.display-right {
+    right: 1%;
+}
+.display-container p{
+    font-size: 14px;
+    line-height: 18px;
+}
