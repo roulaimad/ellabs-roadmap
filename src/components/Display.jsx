@@ -6,7 +6,7 @@ function display({ description, position, title }) {
 
   return (
     <div className={`display-container display-${position}`}>
-      <h3>AAAAAAA {title}</h3>
+      <h3>{title}</h3>
       <p>{description}</p>
     </div>
   );
