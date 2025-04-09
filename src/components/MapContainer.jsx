@@ -7,17 +7,39 @@ function MapContainer() {
   const [hoveredIslandId, setHoveredIslandId] = useState(null);
 
   const handleMouseEnter = (event) => {
-    setHoveredIslandId(event.target.id.slice(-1));
+    const islandId = parseInt(event.target.id.slice(-1));
+    setHoveredIslandId(islandId);
     event.target.style.opacity = 0.5;
+
+    const roads = document.querySelectorAll(`[id^='road']`);
+    roads.forEach((road, index) => {
+      const roadId = index + 1;
+      if (roadId <= islandId) {
+        road.style.stroke = "red";
+      } else {
+        road.style.stroke = "lightgray";
+      }
+    });
   };
 
   const handleMouseLeave = (event) => {
     setHoveredIslandId(null);
     event.target.style.opacity = 0;
+
+    const roads = document.querySelectorAll(`[id^='road']`);
+    roads.forEach((road) => {
+      road.style.stroke = "lightgray";
+    });
   };
 
   useEffect(() => {
     const islands = [...document.querySelectorAll(`[id^='island']`)];
+    const roads = [...document.querySelectorAll(`[id^='road']`)];
+
+    roads.forEach((road) => {
+      road.style.stroke = "lightgray";
+      road.style.transition = "stroke 0.3s ease";
+    });
 
     islands.forEach((island) => {
       island.addEventListener("mouseenter", handleMouseEnter);
