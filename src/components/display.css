@@ -1,10 +1,16 @@
 .display-container {
-    font-family: Roboto;
     position: absolute;
     top: 1%;
-    background-color: rgb(200, 255, 252);
     width: 25%;
+
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    padding: 20px 24px;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     transition: all 0.3s ease-in-out;
+    border: 1px solid #e0e0e0;
 }
 
 .display-left {
@@ -14,7 +20,16 @@
 .display-right {
     right: 1%;
 }
-.display-container p{
-    font-size: 14px;
-    line-height: 18px;
+
+.display-container h3 {
+    margin: 0 0 10px 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+}
+
+.display-container p {
+    font-size: 15px;
+    line-height: 22px;
+    color: #555;
 }

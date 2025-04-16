@@ -64,7 +64,7 @@ function MapContainer() {
         <Display
           id={hoveredIslandId}
           description={levels[hoveredIslandId]?.description}
-          position={hoveredIslandId === "4" ? "right" : "left"}
+          position={hoveredIslandId === 4 ? "right" : "left"}
           title={levels[hoveredIslandId].title}
         />
       )}
